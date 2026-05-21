@@ -5,11 +5,11 @@ plugins {
     application
 }
 
-group = "com.eli.server"
+group = "eli"
 version = "1.0.0"
 
 application {
-    mainClass.set("com.eli.server.EliServerKt")
+    mainClass.set("EliServerKt")
 }
 
 repositories {

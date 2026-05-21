@@ -1,6 +1,11 @@
 FROM gradle:8.5-jdk17 AS build
 WORKDIR /app
-COPY . .
+
+COPY build.gradle.kts .
+COPY EliServer.kt .
+
+RUN mkdir -p src/main/kotlin && cp EliServer.kt src/main/kotlin/
+
 RUN gradle buildFatJar --no-daemon
 
 FROM eclipse-temurin:17-jre-alpine
